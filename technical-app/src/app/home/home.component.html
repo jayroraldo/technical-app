@@ -1,0 +1,40 @@
+<div class="flex-container">
+  <div>
+    <input type="text" [(ngModel)]="inputValue" (keyup.enter)="addPet()" />
+    <button (click)="addPet()">Add Pet</button>
+  </div>
+
+  <div>
+    <div style="margin: 10px">Listed</div>
+    @for (item of listed; track $index;) {
+
+    <div>
+      <p>{{ item.name }}</p>
+    </div>
+    <button (click)="listedNext(item.id)">next</button>
+    }
+  </div>
+
+  <div>
+    <div style="margin: 10px">Examining</div>
+    @for (item of examining; track $index) {
+
+    <div>
+      <p>{{ item.name }}</p>
+    </div>
+    <button (click)="examiningNext(item.id)">next</button>
+
+    }
+  </div>
+
+  <div>
+    <div style="margin: 10px">Finally Back to Hooman</div>
+    @for (item of hooman; track $index) {
+
+    <div>
+      <p>{{ item.name }}</p>
+    </div>
+
+    }
+  </div>
+</div>
